@@ -2,8 +2,6 @@ CPEN 221 / Fall 2015: Lab 7
 Equality
 ====
 
-## Equality
-
 The goal of this lab activity is to reinforce the notion of equality of values in a datatype.
 
 ### Views of equality
