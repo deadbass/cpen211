@@ -17,21 +17,20 @@ How do we know if two objects are *equal*, that they represent the same value?
 **Using an abstraction function** *AF: R &rarr; A*, two objects *a* and *b* are equal iff *AF(a) = AF(b)*.
 This relies on our notion of equality between abstract objects.
 
-**Using *observational equality***, two objects are equal if there are no observations we can make on them that yield different results.
+**Using _observational equality_**, two objects are equal if there are no observations we can make on them that yield different results.
 
-**Using an *equivalence relation***, we must define a relation *E* that is:
+**Using an _equivalence relation_**, we must define a relation *E* that is:
 
-reflexive:
-: *E(t,t)* for all *t*
++ reflexive:
+	*E(t,t)* for all *t*
 
-symmetric:
-: *E(t,u) = E(u, t)*
++ symmetric:
+	*E(t,u) = E(u, t)*
 
-transitive:
-: if *E(t, u)* and *E(u, v)*, then *E(t, v)*
++ transitive:
+	if *E(t, u)* and *E(u, v)*, then *E(t, v)*
 
-Since abstract data types are defined by their operations, we see that observational equality and abstraction-function equality should lead us to the same conclusions.
-And if our abstract notion of equality is not an equivalence relation, we must repair it before it can be implemented.
+Since abstract data types are defined by their operations, we see that observational equality and abstraction-function equality should lead us to the same conclusions. And if our abstract notion of equality is not an equivalence relation, we must repair it before it can be implemented.
 
 #### Example: durations
 
@@ -81,13 +80,12 @@ Like many languages, Java has two different operations for testing equality, wit
 
 ### Implementing equality
 
-Java defines a method on all [`Object`](http://docs.oracle.com/javase/7/docs/api/index.html?java/lang/Object.html)s: [`public boolean equals(Object obj)`](http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html#equals(java.lang.Object)).
+Java defines a method on all [`Object`](http://docs.oracle.com/javase/8/docs/api/index.html?java/lang/Object.html)s: [`public boolean equals(Object obj)`](http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#equals(java.lang.Object)).
 
-To implement equality, your type must *override* this existing method.
-If you're not sure what this means, try the [Java tutorial](http://docs.oracle.com/javase/tutorial/).
+To implement equality, your type must *override* this existing method. If you're not sure what this means, try the [Java tutorial](http://docs.oracle.com/javase/tutorial/).
 
 The Java equality contract also has a requirement about hashing objects.
-The method [`public int hashCode()`](http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html#hashCode()) returns an integer hash value that is used to implement efficient operations in hash tables.
+ The method [`public int hashCode()`](http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html#hashCode()) returns an integer hash value that is used to implement efficient operations in hash tables.
 
 Objects that are equal must return the same hash code.
 
